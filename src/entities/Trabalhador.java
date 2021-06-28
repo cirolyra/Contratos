@@ -69,7 +69,7 @@ public class Trabalhador {
 		contratos.remove(contrato);
 	}
 
-	public Double salario(Integer ano, Integer mes) {
+	public Double salario(Integer mes, Integer ano) {
 
 		Double sum = salarioBase;
 		Calendar cal = Calendar.getInstance();
@@ -79,7 +79,7 @@ public class Trabalhador {
 			cal.setTime(c.getData());
 			
 			int c_ano = cal.get(Calendar.YEAR);
-			int c_mes = cal.get(Calendar.MONTH);
+			int c_mes = cal.get(Calendar.MONTH)+ 1;
 
 			if (c_ano == ano && c_mes == mes) {
 				sum += c.valorTotal();
